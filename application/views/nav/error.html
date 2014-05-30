@@ -1,0 +1,30 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<link rel="stylesheet" href="<?php echo base_url('resource/css/bootstrap.css'); ?>
+	">
+	<link rel="stylesheet" href="<?php echo base_url('resource/css/nav.css'); ?>
+	">
+	<title>错误信息</title>
+</head>
+<body>
+
+	<div class="nav_container">
+		<?php include('top.html') ?>
+
+		<div id="add_header">
+			<h1>错误信息</h1>
+		</div>
+		<div id="add_hr">
+			<hr></div>
+		<div id="error_info">
+			<h3>
+				<?php 
+					echo $message;
+				 ?>
+			</h3>
+		</div>
+	</div>
+</body>
+</html>

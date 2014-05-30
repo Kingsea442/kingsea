@@ -1,0 +1,61 @@
+<nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+	<!-- Brand and toggle get grouped for better mobile display -->
+	<div class="navbar-header">
+		<a class="navbar-brand" href="#">
+			<?php 
+				$user_status = $this->session->userdata('is_login');
+				if ($user_status == 'YES') {
+					$user_name = $this->load->session->userdata('user_name');
+					echo $user_name;
+				} else {
+					echo "欢迎";
+				}
+			 ?>
+		</a>
+	</div>
+
+	<!-- Collect the nav links, forms, and other content for toggling -->
+	<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+		<ul class="nav navbar-nav">
+			<li>
+				<a href="<?php echo base_url('index.php/navcontrollers/nav_controller/index');?>">导航</a>
+			</li>
+
+			<li>
+				<a href="http://kingblog.sturgeon.mopaas.com/">博客</a>
+			</li>
+			<li>
+				<a href="<?php echo base_url('index.php/navcontrollers/nav_controller/info');?>">记事本</a>
+			</li>
+		</ul>
+		<ul class="nav navbar-nav navbar-right">
+			<?php 
+				$user_status = $this->session->userdata('is_login');
+				if ($user_status =='YES') {
+			?>
+				<li>
+					<a href="<?php echo base_url('index.php/navcontrollers/nav_controller/add');?>">管理</a>
+				</li>
+				<li>
+					<a href="<?php echo base_url('index.php/navcontrollers/nav_controller/login_out');?>">退出</a>
+				</li>
+				<li>
+					<a href="<?php echo base_url('index.php/navcontrollers/nav_controller/setbg');?>">
+						<span class="glyphicon glyphicon-cog"></span>
+					</a>
+				</li>
+			<?php
+				}
+				else{
+			?>
+				<li>
+					<a href="<?php echo base_url('index.php/navcontrollers/nav_controller/login');?>">登录</a>
+				</li>
+			<?php
+				}
+			?>
+
+		</ul>
+	</div>
+
+</nav>

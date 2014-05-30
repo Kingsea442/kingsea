@@ -1,0 +1,256 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>链接管理</title>
+	<link rel="stylesheet" href="<?php echo base_url('resource/css/bootstrap.css'); ?>">
+	<link rel="stylesheet" href="<?php echo base_url('resource/css/nav.css'); ?>">
+<body>
+	<div class="nav_container">
+		<?php include("top.html") ?>
+
+		<div id="add_header">
+			<h1>管理网站链接</h1>
+			<button type="button" class="btn btn-primary">
+				<a href="<?php echo base_url('index.php/navcontrollers/nav_controller/manage'); ?>">管理链接</a>
+			</button>
+			<button type="button" class="btn btn-primary">
+				<a href="<?php echo base_url('index.php/navcontrollers/nav_controller/add'); ?>">添加链接</a>
+			</button>
+		</div>
+		<div id="add_hr">
+			<hr></div>
+
+		<div id="manage_interlinkage">
+			<div class="list-group">
+				<ul>
+					<li class="list-group-item active">百度谷歌</li>
+					<?php 
+
+						foreach ($baidugoogle->result() as $row)
+						{
+							echo "<li class='list-group-item'>";
+							echo "<span>";
+							echo $row->hyperlink_name;
+							echo "</span>";
+
+							echo "<div id='manage_interlinkage_operation'>";
+							echo "<button type='button' class='btn btn-warning'>";
+							echo "<a href='";
+							echo base_url('index.php/navcontrollers/nav_controller/modify');
+							echo "?hyperlink_id=";
+							echo $row->hyperlink_id;
+							echo "'>";
+							echo "修改"; 
+							echo"</a>";
+							echo "</button>";
+
+							echo "<button type='button' class='btn btn-danger'>";
+							echo "<a href='";
+							echo base_url('index.php/navcontrollers/nav_controller/delete');
+							echo "?hyperlink_id=";			
+							echo $row->hyperlink_id;
+							echo "'>";
+							echo "删除"; 
+							echo"</a>";
+							echo "</button>";
+
+							echo"</div>";
+						}
+					 ?>
+				</ul>
+			</div>
+			<div class="list-group">
+				<ul>
+					<li class="list-group-item active">好资源</li>
+					<?php 
+
+						foreach ($resource->result() as $row)
+						{
+							echo "<li class='list-group-item'>";
+							echo "<span>";
+							echo $row->hyperlink_name;
+							echo "</span>";
+
+							echo "<div id='manage_interlinkage_operation'>";
+							echo "<button type='button' class='btn btn-warning'>";
+							echo "<a href='";
+							echo base_url('index.php/navcontrollers/nav_controller/modify');
+							echo "?hyperlink_id=";
+							echo $row->hyperlink_id;
+							echo "'>";
+							echo "修改"; 
+							echo"</a>";
+							echo "</button>";
+
+							echo "<button type='button' class='btn btn-danger'>";
+							echo "<a href='";
+							echo base_url('index.php/navcontrollers/nav_controller/delete');
+							echo "?hyperlink_id=";			
+							echo $row->hyperlink_id;
+							echo "'>";
+							echo "删除"; 
+							echo"</a>";
+							echo "</button>";
+
+							echo"</div>";
+						}
+					 ?>
+				</ul>
+			</div>
+			<div class="list-group">
+				<ul>
+					<li class="list-group-item active">编程开发</li>
+					<?php 
+
+						foreach ($programe->result() as $row)
+						{
+							echo "<li class='list-group-item'>";
+							echo "<span>";
+							echo $row->hyperlink_name;
+							echo "</span>";
+
+							echo "<div id='manage_interlinkage_operation'>";
+							echo "<button type='button' class='btn btn-warning'>";
+							echo "<a href='";
+							echo base_url('index.php/navcontrollers/nav_controller/modify');
+							echo "?hyperlink_id=";
+							echo $row->hyperlink_id;
+							echo "'>";
+							echo "修改"; 
+							echo"</a>";
+							echo "</button>";
+
+							echo "<button type='button' class='btn btn-danger'>";
+							echo "<a href='";
+							echo base_url('index.php/navcontrollers/nav_controller/delete');
+							echo "?hyperlink_id=";			
+							echo $row->hyperlink_id;
+							echo "'>";
+							echo "删除"; 
+							echo"</a>";
+							echo "</button>";
+
+							echo"</div>";
+						}
+					 ?>
+				</ul>
+			</div>
+			<div class="list-group">
+				<ul>
+					<li class="list-group-item active">技术资讯</li>
+					<?php 
+
+						foreach ($news->result() as $row)
+						{
+							echo "<li class='list-group-item'>";
+							echo "<span>";
+							echo $row->hyperlink_name;
+							echo "</span>";
+
+							echo "<div id='manage_interlinkage_operation'>";
+							echo "<button type='button' class='btn btn-warning'>";
+							echo "<a href='";
+							echo base_url('index.php/navcontrollers/nav_controller/modify');
+							echo "?hyperlink_id=";
+							echo $row->hyperlink_id;
+							echo "'>";
+							echo "修改"; 
+							echo"</a>";
+							echo "</button>";
+
+							echo "<button type='button' class='btn btn-danger'>";
+							echo "<a href='";
+							echo base_url('index.php/navcontrollers/nav_controller/delete');
+							echo "?hyperlink_id=";			
+							echo $row->hyperlink_id;
+							echo "'>";
+							echo "删除"; 
+							echo"</a>";
+							echo "</button>";
+
+							echo"</div>";
+						}
+					 ?>
+				</ul>
+			</div>
+			<div class="list-group">
+				<ul>
+					<li class="list-group-item active">影音书生活</li>
+					<?php 
+
+						foreach ($movies->result() as $row)
+						{
+							echo "<li class='list-group-item'>";
+							echo "<span>";
+							echo $row->hyperlink_name;
+							echo "</span>";
+
+							echo "<div id='manage_interlinkage_operation'>";
+							echo "<button type='button' class='btn btn-warning'>";
+							echo "<a href='";
+							echo base_url('index.php/navcontrollers/nav_controller/modify');
+							echo "?hyperlink_id=";
+							echo $row->hyperlink_id;
+							echo "'>";
+							echo "修改"; 
+							echo"</a>";
+							echo "</button>";
+
+							echo "<button type='button' class='btn btn-danger'>";
+							echo "<a href='";
+							echo base_url('index.php/navcontrollers/nav_controller/delete');
+							echo "?hyperlink_id=";			
+							echo $row->hyperlink_id;
+							echo "'>";
+							echo "删除"; 
+							echo"</a>";
+							echo "</button>";
+
+							echo"</div>";
+						}
+					 ?>
+				</ul>
+			</div>
+			<div class="list-group">
+				<ul>
+					<li class="list-group-item active">其它</li>
+					<?php 
+
+						foreach ($others->result() as $row)
+						{
+							echo "<li class='list-group-item'>";
+							echo "<span>";
+							echo $row->hyperlink_name;
+							echo "</span>";
+
+							echo "<div id='manage_interlinkage_operation'>";
+							echo "<button type='button' class='btn btn-warning'>";
+							echo "<a href='";
+							echo base_url('index.php/navcontrollers/nav_controller/modify');
+							echo "?hyperlink_id=";
+							echo $row->hyperlink_id;
+							echo "'>";
+							echo "修改"; 
+							echo"</a>";
+							echo "</button>";
+
+							echo "<button type='button' class='btn btn-danger'>";
+							echo "<a href='";
+							echo base_url('index.php/navcontrollers/nav_controller/delete');
+							echo "?hyperlink_id=";			
+							echo $row->hyperlink_id;
+							echo "'>";
+							echo "删除"; 
+							echo"</a>";
+							echo "</button>";
+
+							echo"</div>";
+						}
+					 ?>
+				</ul>
+			</div>
+		</div>
+	</div>
+</body>
+</html>

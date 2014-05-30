@@ -1,0 +1,185 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>导航</title>
+	<!-- <link rel="stylesheet" href="./css/bootstrap.css">
+	<link rel="stylesheet" href="./css/nav.css">
+	 -->
+	<link rel="stylesheet" href="<?php echo base_url('resource/css/bootstrap.css'); ?>">
+	<link rel="stylesheet" href="<?php echo base_url('resource/css/nav.css'); ?>">
+</head>
+<body 
+				<?php 
+					if (isset($_COOKIE['bg_id'])) {
+						echo "style='";
+						echo "background:";
+						echo "url(";
+						echo $_COOKIE['bg_id'];
+						echo ")";
+						echo "'";
+					} else {
+						echo "style='";
+						echo "background:";
+						echo "#4B4B4B";
+						echo "'";
+					}
+				  ?>>
+	<?php include("top.html") ?>
+	<!-- 导航栏下的一个大容器-->
+	<div class="nav_container">
+
+		<div id="baidusearch">
+			<form action="http://www.baidu.com/baidu" target="_blank">
+				<div id="input_text">
+					<input type="text" name="word" size=30 autofocus="autofocus"></div>
+				<div id="input_submit">
+					<input type="submit" value="百度搜索" class = "btn btn-primary"></div>
+			</form>
+		</div>
+		<!-- 搜索栏下的一个容器 -->
+		<div id="nav_content">
+			<!-- 左边布局 -->
+			<div id="nav_content_left">
+
+				<div class="panel panel-primary">
+					<div class="panel-heading">百度谷歌</div>
+					<div class="panel-body">
+						<ul>
+							<?php 
+								foreach ($baidugoogle->result() as $row)
+								{
+									echo "<li>";
+									echo "<a href= ' ";
+									echo $row->hyperlink_content;
+									echo "'";
+									echo "target='_blank'";
+									echo ">";
+									echo $row->hyperlink_name;
+									echo "</a>";
+ 								}
+							 ?>
+
+
+						</ul>
+					</div>
+				</div>
+
+				<div class="panel panel-primary">
+					<div class="panel-heading">好资源</div>
+					<div class="panel-body">
+						<ul>
+							<?php 
+								foreach ($resource->result() as $row)
+								{
+									echo "<li>";
+									echo "<a href= ' ";
+									echo $row->hyperlink_content;
+									echo "'";
+									echo "target='_blank'";
+									echo ">";
+									echo $row->hyperlink_name;
+									echo "</a>";
+								}
+							 ?>
+						</ul>
+					</div>
+				</div>
+
+			</div>
+			<!-- 中间布局 -->
+
+			<div id="nav_content_middle">
+
+				<div class="panel panel-primary">
+					<div class="panel-heading">编程开发</div>
+					<div class="panel-body">
+						<ul>
+							<?php 
+								foreach ($programe->result() as $row)
+								{
+									echo "<li>";
+									echo "<a href= ' ";
+									echo $row->hyperlink_content;
+									echo "'";
+									echo "target='_blank'";
+									echo ">";
+									echo $row->hyperlink_name;
+									echo "</a>";
+								}
+							 ?>
+						</ul>
+					</div>
+				</div>
+
+				<div class="panel panel-primary">
+					<div class="panel-heading">其它</div>
+					<div class="panel-body">
+						<ul>
+							<?php 
+								foreach ($others->result() as $row)
+								{
+									echo "<li>";
+									echo "<a href= ' ";
+									echo $row->hyperlink_content;
+									echo "'";
+									echo "target='_blank'";
+									echo ">";
+									echo $row->hyperlink_name;
+									echo "</a>";
+								}
+							 ?>
+						</ul>
+					</div>
+				</div>
+
+			</div>
+
+			<!-- 右边布局 -->
+			<div id="nav_content_right">
+				<div class="panel panel-primary">
+					<div class="panel-heading">技术资讯</div>
+					<div class="panel-body">
+						<ul>
+							<?php 
+								foreach ($news->result() as $row)
+								{
+									echo "<li>";
+									echo "<a href= ' ";
+									echo $row->hyperlink_content;
+									echo "'";
+									echo "target='_blank'";
+									echo ">";
+									echo $row->hyperlink_name;
+									echo "</a>";
+								}
+							 ?>
+						</ul>
+					</div>
+				</div>
+
+				<div class="panel panel-primary">
+					<div class="panel-heading">影音书生活</div>
+					<div class="panel-body">
+						<ul>
+							<?php 
+								foreach ($movies->result() as $row)
+								{
+									echo "<li>";
+									echo "<a href= ' ";
+									echo $row->hyperlink_content;
+									echo "'";
+									echo "target='_blank'";
+									echo ">";
+									echo $row->hyperlink_name;
+									echo "</a>";
+								}
+							 ?>
+						</ul>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</body>
+</html>

@@ -1,0 +1,61 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<link rel="stylesheet" href="<?php echo base_url('resource/css/bootstrap.css'); ?>
+	">
+	<link rel="stylesheet" href="<?php echo base_url('resource/css/nav.css'); ?>
+	">
+	<title>添加链接</title>
+</head>
+<body>
+
+	<div class="nav_container">
+		<?php include('top.html') ?>
+
+		<div id="add_header">
+			<h1>添加网站链接</h1>
+			<button type="button" class="btn btn-primary">
+				<a href="<?php echo base_url('index.php/navcontrollers/nav_controller/manage'); ?>">管理链接</a>
+			</button>
+			<button type="button" class="btn btn-primary">
+				<a href="<?php echo base_url('index.php/navcontrollers/nav_controller/add'); ?>">添加链接</a>
+			</button>
+		</div>
+		<div id="add_hr">
+			<hr></div>
+		<div id="add_interlinkage">
+			<form role="form" action="<?php echo base_url('index.php/navcontrollers/nav_controller/insert_hyperlink'); ?>
+				" method="post">
+				<div class="form-group">
+					<label for="exampleInputEmail1">网站名称</label>
+					<input type="input" class="form-control" placeholder="网站名称" name="hyperlink_name"></div>
+				<div class="form-group">
+					<label for="exampleInputPassword1">网站链接</label>
+					<input type="input" class="form-control" placeholder="http://" name="hyperlink_content"></div>
+				<div id="webtype">
+					<label for="exampleInputPassword1" name="hyperlink_type">网站分类</label>
+
+				</div>
+				<select class="form-control" name="hyperlink_type">
+					<option value="">-请选择-</option>
+					<option value="百度谷歌">百度谷歌</option>
+					<option value="好资源">好资源</option>
+					<option value="编程开发">编程开发</option>
+					<option value="其它">其它</option>
+					<option value="技术资讯">技术资讯</option>					
+					<option value="影音书生活">影音书生活</option>					
+				</select>
+
+				<div id="interlinkage_submit">
+					<input type="submit" class="btn btn-primary" value="添加">
+					<input type="reset" class="btn btn-primary" value="重填"></div>
+			</form>
+		</div>
+
+	</div>
+	<script src="https://code.jquery.com/jquery.js"></script>
+	<!-- Include all compiled plugins (below), or include individual files as needed -->
+	<script src="js/bootstrap.js"></script>
+</body>
+</html>

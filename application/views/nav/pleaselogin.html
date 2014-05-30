@@ -1,0 +1,28 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<link rel="stylesheet" href="<?php echo base_url('resource/css/bootstrap.css'); ?>
+	">
+	<link rel="stylesheet" href="<?php echo base_url('resource/css/nav.css'); ?>
+	">
+	<title>请先登录</title>
+</head>
+<body>
+
+	<div class="nav_container">
+		<?php include('top.html') ?>
+
+		<div id="add_header">
+			<h1>错误信息</h1>
+		</div>
+		<div id="add_hr">
+			<hr></div>
+		<div id="error_info">
+			<a href="<?php echo base_url('index.php/navcontrollers/nav_controller/login'); ?>">
+				<h3>请先登录！</h3>
+			</a>
+		</div>
+	</div>
+</body>
+</html>
